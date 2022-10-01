@@ -1,0 +1,593 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+	
+    <script src="funJS.js" ></script>
+	  <script src="jQuery/jquery-3.6.0.min.js" ></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#myModal").modal('show');
+        });
+
+        $(document).ready(function(){
+            $("#myModal_anotherClass").modal('show');
+        });
+
+        setTimeout(function(){$('#myModal_anotherClass').modal('hide')},3000);
+
+    </script>
+
+
+
+
+    <link rel="icon" href="images/blood-drop.png">
+
+
+    <title>BloodBank</title>
+
+
+  <style>
+          .drop{
+              transition: all 0.3s ease-in;
+          }
+          .heart{
+              font-size: 150px;
+              text-shadow: 7px 7px #CACFD2;
+          }
+          .about{
+              color:#A6ACAF ;
+          }
+          .topnav{
+              padding: 20px;
+              background-color: #f8f9fa;
+          }
+          .topnav .n{
+              color: #dc3545;
+              padding: 15px;
+              text-decoration: none;
+              border-bottom: 1px solid transparent;
+              transition: all 0.3s ease-in;
+          }
+          .topnav .button{
+              padding: 10px 15px;
+              background-color: #dc3545;
+              border-radius: 5px;
+              color: #fff;
+              text-decoration: none;
+              transition: all 0.3s ease;
+              cursor: pointer;
+              float: right;
+              position: absolute;
+              right: 25px;
+              top: 13px;
+              
+          }
+          .topnav .button:hover{
+              background-color: #be2a38;
+          }
+
+          .topnav .n:hover{
+              color: #CACFD2;
+              border-color: #dc3545;
+          }
+          .icon{
+              position: absolute;
+              color: #dc3545;
+              right: 10px;
+              top: 10px;
+              font-size: 35px;
+              display: none;
+          }
+          #topPage{
+              color: #dc3545;
+              position: fixed;
+              bottom: 20px;
+              right: 30px;
+              font-size: 50px;
+              display: none;
+              cursor: pointer;
+              transition: all 0.3s ease;
+          }
+          #topPage:hover{
+              transform: scale(1.1);
+          }
+          
+          
+          @media screen and (max-width: 600px) {
+          .topnav .n{display: none;}
+          .topnav .button{
+              right: 60px;
+          }
+          .topnav a.icon {
+            display: block;
+          }
+          }
+
+          @media screen and (max-width: 600px) {
+            .topnav.responsive {
+                position: relative;
+          }
+  
+            
+            .topnav.responsive .n {
+              display: block;
+              margin-top: 10px;  
+          }
+          }
+          
+          
+          @media (max-width: 1000px) {
+          .img{
+            display: none;
+          }
+          }
+  </style>
+
+
+</head>
+<body style="font-family: 'Comfortaa', cursive;">
+     
+	 
+	 
+
+
+
+ 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+<!--   #######################################################-- Nav --###################################################################  -->
+    <div class="topnav" id="myTopnav">
+        <a href="index.php" style="color: #dc3545; text-decoration: none; font-size: 20px; margin-right: 50px; font-weight: bolder;">Blood<span style="color: #CACFD2;">Bank</span></a>
+        <a href="#myTopnav" class="n" style="color: #CACFD2; border-color: #dc3545;">Home</a>
+        <a href="#about" class="n">About us</a>
+        <a href="#donate" class="n">Blood donate</a>
+        <a href="#quantity" class="n">Quantity</a>
+        <a href="#contact" class="n">Contact</a>
+        <a class="icon" onclick="myFunction()">
+            <i class="bi bi-filter-right"></i>
+        </a>
+        <li class="t button btn-group btn-sm">
+                  <button  class="btn btn-danger btn-sm dropdown"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Log in
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+
+                    <li><a class="dropdown-item" data-bs-dismiss="modal" data-bs-target="#employee" data-bs-toggle="modal">Employee</a></li>
+                    <li><a class="dropdown-item" data-bs-dismiss="modal" data-bs-target="#donorModal" data-bs-toggle="modal">Donor</a></li>
+                    <li><a class="dropdown-item" data-bs-dismiss="modal" data-bs-target="#recipientsModal" data-bs-toggle="modal">Recipient</a> </li>
+              
+                  </ul>
+        </li>
+       
+      </div>
+
+     
+  
+
+<!--   #######################################################-- Login Employee --###################################################################  -->
+      <div class="modal fade" id="employee" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title text-danger">Login Employee</h4>
+                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                
+        <form action="#" method ="POST">
+
+					  <div class="modal-body">
+					
+					            <!-- ID input -->
+					
+                      <div class="mb-3">
+                        <label for="id" class="form-label text-danger">ID</label>
+                        <input type="text" class="form-control" id="id" value="" pattern="[0-9]{1,6}" name = "ID_Employee" required>
+                      </div>
+					  
+					            <!-- Password input -->
+					  
+                      <div class="mb-3">
+                        <label for="password" class="form-label text-danger">Password</label>
+                        <input type="password" class="form-control"  id="myPass1" value="" pattern="[\sA-Za-z\d\w!@#\$%\^&\*\(\)_\+-\?>~<:\}\{\[\] ]{8,50}"  name = "Passwor_Employee" required></input>
+                      </div>
+					  
+                      <!-- Checkbox -->
+                      <div class="row">
+                        <div class="col">
+
+                              <div class="form-check">
+                              <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="form1Example3"
+                              onclick="ShowPassword(1)"
+                              />
+                              <label class="form-check-label"  > Show Password </label>
+                              </div>
+
+
+                              <div class="form-check">
+                              <input
+                              class="form-check-input"
+                              type="checkbox"
+                              name="RememberMe_Login_Employee"
+                              />
+                              <label class="form-check-label"  > Remember Me </label>
+                              </div>
+
+                        </div>
+                        <div class="col">
+                              <a  href="#"></a><br>
+                              <a  href="#">Forgot password?</a>
+                        </div>  
+                      </div>
+					  </div>
+                    
+                 
+				 <!-- Submit button -->
+				 
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger" name="loginEmployee_Admin">Log in</button>
+                  </div>
+				  
+			  </form>
+            </div>
+        </div>
+     </div>
+<!--   #######################################################-- Login Donor --###################################################################  -->
+     <div class="modal fade" id="donorModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title text-danger">Login Donor</h4>
+                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+          <form action="#" method ="POST">
+                <div class="modal-body">
+
+                    <!-- ID input -->
+                      <div class="mb-3">
+                        <label for="id" class="form-label text-danger">SSN</label>
+                        <input type="text" class="form-control" id="id" value=""   pattern="[0-9]{10}" name = "SNN_Donor" required>
+                      </div>
+
+                      <!-- Password input -->
+                      <div class="mb-3">
+                        <label for="password" class="form-label text-danger">Password</label>
+                        <input type="password" class="form-control" id="myPass2" value="" pattern="[\sA-Za-z\d\w!@#\$%\^&\*\(\)_\+-\?>~<:\}\{\[\] ]{8,50}" name = "Passwor_Donor" required></input>
+                      </div>
+                      
+
+                      
+                      <!-- Checkbox -->
+                      <div class="row">
+                        <div class="col">
+
+                              <div class="form-check">
+                              <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="form1Example3"
+                              onclick="ShowPassword(2)"
+                              />
+                              <label class="form-check-label"  > Show Password </label>
+                              </div>
+
+
+                              <div class="form-check">
+                              <input
+                              class="form-check-input"
+                              type="checkbox"
+                              name="RememberMe_Login_Donor"
+                              />
+                              <label class="form-check-label"  > Remember Me </label>
+                              </div>
+
+                        </div>
+                        <div class="col">
+                              <a  href="#"></a><br>
+                              <a  href="#">Forgot password?</a>
+                        </div>  
+                      </div>
+
+                      
+                      
+                                
+                </div>
+
+
+                  <!-- Submit button -->
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger" name="login_Donor">Log in</button>
+                  </div>
+                  </form>
+            </div>
+        </div>
+     </div>
+<!--   #######################################################-- Login Recipient --###############################################################  -->
+     <div class="modal fade" id="recipientsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title text-danger">Login Recipient</h4>
+                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+              <form action="#" method ="POST">
+                <div class="modal-body">
+
+                      <!-- ID input -->
+                      <div class="mb-3">
+                        <label for="id" class="form-label text-danger">ID</label>
+                        <input type="text" class="form-control" value="" pattern="[0-9]{2,6}" id="id" name="ID_Recipient" required>
+                      </div>
+
+                      <!-- Password input -->
+                      <div class="mb-3">
+                        <label for="password" class="form-label text-danger">Password</label>
+                        <input type="password" class="form-control" id="myPass8" value=""  pattern="[\sA-Za-z\d\w!@#\$%\^&\*\(\)_\+-\?>~<:\}\{\[\] ]{8,50}" name="Passwor_Recipient"  required></input>
+                      </div>
+
+                      <!-- Checkbox -->
+                      <div class="row">
+                        <div class="col">
+
+                              <div class="form-check">
+                              <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="form1Example3"
+                              onclick="ShowPassword(8)"
+                              />
+                              <label class="form-check-label"  > Show Password </label>
+                              </div>
+
+
+                              <div class="form-check">
+                              <input
+                              class="form-check-input"
+                              type="checkbox"
+                              name="RememberMe_Login_Recipient"
+                              />
+                              <label class="form-check-label"  > Remember Me </label>
+                              </div>
+
+                        </div>
+                        <div class="col">
+                              <a  href="#"></a><br>
+                              <a  href="#">Forgot password?</a>
+                        </div>  
+                      </div>
+                              
+                    
+                  </div>
+                    <!-- Submit button -->
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger" name="Login_Recipient">Log in</button>
+                  </div>
+              </form>
+            </div>
+        </div>
+     </div>
+<!--   ##########################################################################################################################  -->
+      
+  <div class="container-fluid">
+       <div class="row align-items-center bg-light pt-5 pb-5">  
+           <div class="col-lg-12 text-center">
+               <i class="heart bi bi-heart-pulse text-danger"></i>
+               <h1 class="t text-danger fw-bold">Donate blood to save a life</h1>
+               <p class="b text-danger" style="font-size:20px;">Connecting blood donors with recipients</p>
+               <div class="t dropdown">
+                <button class="btn btn-outline-danger dropdown-toggle" data-bs-toggle="dropdown" data-bs-target="#sign" aria-expanded="false">Sign up</button>
+                <ul class="dropdown-menu" aria-labelledby="sign">
+                    <li class="dropdown-item"><a class="text-danger" style="text-decoration: none;" href="SignUp_Donor.php" >Donor</a></li>
+                    <li class="dropdown-item"><a class="text-danger" style="text-decoration: none;" href="SignUp_RequestToCreateAnAccount.php" >Recipients</a></li>
+                  <!-- 
+                    <li class="dropdown-item text-danger"><a data-bs-toggle="modal" data-bs-target="#donorSign">Donor</a></li>
+                    <li class="dropdown-item text-danger"><a data-bs-toggle="modal" data-bs-target="#recipientsRequest">Recipients</a></li>
+                  -->
+                </ul>
+            </div>
+           </div>
+       </div>
+  </div>
+
+
+
+
+  <div class="container-fluid" id="about">
+      <div class="row align-items-center justify-content-center" style="height: 400px;">
+        <div class="col-lg-5 p-3 m-5">
+            <h1 class="b mb-4 text-danger">About us</h1>
+            <p class="t about">A group of young people who believed in the idea of a pioneering blood bank based on automating blood bank procedures and facilitating and organizing the process of donating blood and delivering it to the recipients smoothly</p>
+        </div>
+          <div class="col-lg-5 text-center">
+              <img class="img" src="images/donation.png" alt="" style="height: 200px;">
+          </div>
+      </div>
+  </div>
+
+  <div class="container-fluid bg-light text-danger text-center" id="donate">
+      <h1 style="padding-top: 80px; margin-bottom: 80px;" class="b">Blood <span style="color: #A6ACAF; font-style: italic;">donate</span></h1>
+      <div class="t row align-items-center justify-content-center" style="margin-bottom:80px;">
+          <div class="col-lg-3 col-sm-4">
+             <h1>O-</h1>
+             <p style="color: #A6ACAF;">Give all blood types</p>
+          </div>
+          <div class="col-lg-3 col-sm-4">
+            <h1>O+</h1>
+            <p style="color: #A6ACAF;">Give : AB+ , A+ , B+ , O+</p>
+        </div>
+        <div class="col-lg-3 col-sm-4">
+            <h1>B-</h1>
+            <p style="color: #A6ACAF;">Give : AB+ , AB- , B+ , B-</p>
+        </div>
+        <div class="col-lg-3 col-sm-4">
+            <h1>B+</h1>
+            <p style="color: #A6ACAF;">Give : AB+ , B+</p>
+        </div>
+      </div>
+      <div class="b row align-items-center justify-content-center text-center" style="padding-bottom:100px;">
+        <div class="col-lg-3 col-sm-4">
+           <h1>A-</h1>
+           <p style="color: #A6ACAF;">Give : AB+ , AB- , A+ , A-</p>
+        </div>
+        <div class="col-lg-3 col-sm-4">
+          <h1>A+</h1>
+          <p style="color: #A6ACAF;">Give : AB+ , A+</p>
+      </div>
+      <div class="col-lg-3 col-sm-4">
+          <h1>AB-</h1>
+          <p style="color: #A6ACAF;">Give : AB+ , AB-</p>
+      </div>
+      <div class="col-lg-3 col-sm-4">
+          <h1>AB+</h1>
+          <p style="color: #A6ACAF;">Give : AB+</p>
+      </div>
+    </div>
+  </div>
+<?php
+
+
+
+
+
+
+?>
+<div class="container-fluid text-center text-danger" id="quantity">
+    <h1 style="padding-top: 80px; padding-bottom: 80px;" class="b">Blood <span style="color: #A6ACAF; font-style: italic;">quantity</span></h1>
+    <div class="row t" style="height: 150px;">
+        <div class="col-4">
+          <h1>15985</h1>
+          <p style="color: #A6ACAF;">Donors Number</p>
+        </div>
+        <div class="col-4">
+            <h1>1005021</h1>
+            <p style="color: #A6ACAF;">Blood Units</p>
+        </div>
+        <div class="col-4">
+            <h1>75</h1>
+            <p style="color: #A6ACAF;">Recipients Number</p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-light" id="contact">
+    <div class="row align-items-center justify-content-center pt-5 pb-5" >
+       <div class="b col-sm-12 col-lg-6">
+            <h3 class="text-danger mb-4">Blood <span style="color: #A6ACAF;">Bank</span></h3>
+            <p class="text-muted mb-3">We're a digital agency focused on creative and results-driven solutions.</p>
+            <p class="text-muted">We measure our success by the results we drive for our clients.</p>
+        </div>
+        <div class="t col-sm-3 col-lg-4">
+            <h4 class="text-danger mb-4">Keep in touch</h4>
+            <p class="text-muted"><i class="bi bi-envelope-fill me-2"></i> bloodbankjust@gmail.com</p>
+            <p class="text-muted"><i class="bi bi-telephone-fill me-2"></i> +962 790061201</p>
+            <p class="text-muted"><i class="bi bi-geo-alt-fill me-2"></i>Jordan university of science and technology</p>
+        </div>
+        
+
+    </div>
+    
+
+</div>
+
+
+<div class="container">
+<br>
+<br>
+<a href="https://info.flagcounter.com/ZkCB"><img src="https://s01.flagcounter.com/count/ZkCB/bg_FF3030/txt_EDFFFE/border_CC0A1E/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+<br>
+<br>
+<br>
+</div>
+
+<a onclick="topPage()" id="topPage" href="#myTopnav"><i class="bi bi-arrow-up-square-fill"></i></a>
+
+
+<!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+<script>
+
+
+
+/////////////////////////////
+
+
+
+
+
+ ScrollReveal({ 
+     reset: true,
+     distance:'60px',
+     duration:2000 
+ });
+
+ ScrollReveal().reveal('.heart', { delay: 500});
+ ScrollReveal().reveal('.t', { delay: 200 ,origin:'top'});
+ ScrollReveal().reveal('.b', { delay: 200 ,origin:'bottom'});
+ ScrollReveal().reveal('.l', { delay: 500 ,origin:'left'});
+ ScrollReveal().reveal('.r', { delay: 500 ,origin:'right'});
+
+ function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+var topPage=document.getElementById("topPage");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.documentElement.scrollTop > 200) {
+    topPage.style.display = "block";
+  } else {
+    topPage.style.display = "none";
+  }
+}
+
+
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
+
+
